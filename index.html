@@ -46,7 +46,7 @@ body{
   margin:0;
   background:var(--paper);
   color:var(--ink);
-  font:400 16px/1.65 var(--font);
+  font:400 16px/1.65 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
@@ -59,7 +59,6 @@ img{
 
 a{color:inherit}
 button{font:inherit}
-
 ::selection{background:#cfe5ff}
 
 .wrap{
@@ -94,8 +93,7 @@ h3{
 
 p{color:var(--muted)}
 
-a:focus-visible,
-button:focus-visible{
+a:focus-visible,button:focus-visible{
   outline:3px solid var(--blue);
   outline-offset:4px;
 }
@@ -167,9 +165,7 @@ button:focus-visible{
 .btn:hover .arrow{transform:translateX(4px)}
 
 
-/* =========================================
-   FULL-WIDTH HEADER
-========================================= */
+/* HEADER */
 
 .site-header{
   position:sticky;
@@ -187,19 +183,15 @@ button:focus-visible{
   height:78px;
   margin:0;
   padding:0 max(calc((100% - 1160px)/2),22px);
-
   display:flex;
   align-items:center;
   gap:24px;
-
   border:0;
   border-bottom:1px solid rgba(20,25,40,.07);
   border-radius:0;
-
   background:rgba(250,251,255,.88);
   backdrop-filter:blur(28px) saturate(180%);
   -webkit-backdrop-filter:blur(28px) saturate(180%);
-
   box-shadow:0 4px 25px rgba(24,39,75,.035);
 }
 
@@ -249,9 +241,7 @@ button:focus-visible{
 }
 
 
-/* =========================================
-   HERO
-========================================= */
+/* HERO */
 
 .hero{
   min-height:690px;
@@ -359,9 +349,7 @@ button:focus-visible{
 }
 
 
-/* =========================================
-   APP STRIP
-========================================= */
+/* APP STRIP */
 
 .app-strip{
   display:flex;
@@ -394,9 +382,7 @@ button:focus-visible{
 }
 
 
-/* =========================================
-   SECTIONS
-========================================= */
+/* SECTIONS */
 
 section{padding:125px 0}
 
@@ -464,9 +450,7 @@ section{padding:125px 0}
 .stat.highlight span{color:rgba(255,255,255,.8)}
 
 
-/* =========================================
-   FEATURE SCREENS
-========================================= */
+/* FEATURE SCREENS */
 
 .screens-section{
   background:#fff;
@@ -528,6 +512,7 @@ section{padding:125px 0}
   color:#9ba1ad;
   font-weight:700;
   width:30px;
+  flex-shrink:0;
 }
 
 .screen-title{
@@ -537,16 +522,39 @@ section{padding:125px 0}
   flex:1;
 }
 
+/* CENTERED PLUS / X ICON */
+
 .screen-toggle{
   width:42px;
   height:42px;
+  min-width:42px;
+  flex-shrink:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:0;
+  margin:0;
+
+  border:0;
   border-radius:50%;
-  display:grid;
-  place-items:center;
+
   background:#fff;
   color:#30343c;
-  font-size:1.3rem;
-  transition:transform .4s var(--ease),background .3s,color .3s;
+
+  font-family:Arial,sans-serif;
+  font-size:26px;
+  font-weight:400;
+  line-height:1;
+
+  text-align:center;
+  vertical-align:middle;
+
+  transition:
+    transform .4s var(--ease),
+    background .3s,
+    color .3s;
 }
 
 .screen-card[open] .screen-toggle{
@@ -595,9 +603,7 @@ section{padding:125px 0}
 }
 
 
-/* =========================================
-   PRIVACY
-========================================= */
+/* PRIVACY */
 
 .privacy-grid{
   display:grid;
@@ -671,9 +677,7 @@ section{padding:125px 0}
 }
 
 
-/* =========================================
-   REVIEWS
-========================================= */
+/* REVIEWS */
 
 .review{
   border-radius:40px;
@@ -745,9 +749,7 @@ blockquote{
 }
 
 
-/* =========================================
-   CTA
-========================================= */
+/* CTA */
 
 .cta-panel{
   position:relative;
@@ -792,9 +794,7 @@ blockquote{
 }
 
 
-/* =========================================
-   FULL-WIDTH FOOTER
-========================================= */
+/* FULL-WIDTH FOOTER */
 
 footer{
   width:100%;
@@ -867,9 +867,7 @@ footer{
 }
 
 
-/* =========================================
-   ANIMATIONS
-========================================= */
+/* ANIMATIONS */
 
 .reveal{
   opacity:0;
@@ -902,9 +900,7 @@ footer{
 }
 
 
-/* =========================================
-   TABLET RESPONSIVE
-========================================= */
+/* TABLET */
 
 @media(max-width:850px){
 
@@ -963,9 +959,7 @@ footer{
 }
 
 
-/* =========================================
-   MOBILE RESPONSIVE
-========================================= */
+/* MOBILE */
 
 @media(max-width:560px){
 
@@ -973,10 +967,7 @@ footer{
     width:min(100% - 30px,1160px);
   }
 
-  /* Full-width mobile header */
-  .site-header{
-    padding:0;
-  }
+  .site-header{padding:0}
 
   .nav{
     width:100%;
@@ -1048,6 +1039,9 @@ footer{
   .screen-toggle{
     width:36px;
     height:36px;
+    min-width:36px;
+    font-size:23px;
+    line-height:1;
   }
 
   .screen-content{
@@ -1077,7 +1071,6 @@ footer{
 
   .footer-cols{gap:35px}
 
-  /* Full-width footer on mobile */
   footer{
     width:100%;
     border-radius:0;
@@ -1097,9 +1090,7 @@ footer{
 }
 
 
-/* =========================================
-   REDUCED MOTION
-========================================= */
+/* REDUCED MOTION */
 
 @media(prefers-reduced-motion:reduce){
 
@@ -1123,10 +1114,8 @@ footer{
 
 <body>
 
-<!-- HEADER -->
 <header class="site-header">
  <div class="nav">
-
   <a class="brand" href="#top">
    <img src="https://lh3.googleusercontent.com/d/1Lzqc0QWvgZHokJ0SQZ5bKi2rbNOgl9vT=w256" alt="">
    SNSL
@@ -1142,22 +1131,17 @@ footer{
   <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.snsl.liquidphoto">
    Get the app <span class="arrow">→</span>
   </a>
-
  </div>
 </header>
 
-
-<!-- MAIN -->
 <main id="top">
 
  <div class="wrap">
 
-  <!-- HERO -->
   <section class="hero">
 
    <div class="hero-copy reveal">
-
-    <span class="eyebrow">Modern Apps. Thoughtful Design</span>
+    <span class="eyebrow">Modern Apps. Thoughtful Design. — Minimal and stylish.</span>
 
     <h1>Photos.<br><span>Beautifully private.</span></h1>
 
@@ -1166,7 +1150,6 @@ footer{
     </p>
 
     <div class="actions">
-
      <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.snsl.liquidphoto">
       Explore on Google Play <span class="arrow">→</span>
      </a>
@@ -1174,12 +1157,10 @@ footer{
      <a class="btn secondary" href="#apps">
       Discover the experience
      </a>
-
     </div>
    </div>
 
    <div class="hero-visual reveal">
-
     <div class="hero-phone">
      <img src="https://lh3.googleusercontent.com/d/1dse3C8R6baJNDsAuZuM7bszoZa4n_0PR=w900" width="900" height="1601" alt="Photos – Liquid Glass gallery screen">
     </div>
@@ -1188,15 +1169,11 @@ footer{
      <b>Private by design</b>
      <span>Offline · On-device · Yours</span>
     </div>
-
    </div>
 
   </section>
 
-
-  <!-- APP STRIP -->
   <div class="app-strip reveal">
-
    <img src="https://lh3.googleusercontent.com/d/1tciigXTisfNr1ejOxBIO1uZ1IAYyAeOy=w512" alt="Photos – Liquid Glass app icon">
 
    <div class="app-strip-copy">
@@ -1207,19 +1184,14 @@ footer{
    <a class="btn secondary" href="https://play.google.com/store/apps/details?id=com.snsl.liquidphoto">
     View on Google Play <span class="arrow">→</span>
    </a>
-
   </div>
 
  </div>
 
-
- <!-- ABOUT -->
  <section id="about">
-
   <div class="wrap about-grid">
 
    <div class="about-copy reveal">
-
     <span class="eyebrow">A little about SNSL</span>
 
     <h2>Thoughtful tools.<br>Personal memories.</h2>
@@ -1231,59 +1203,33 @@ footer{
     <a class="btn" href="https://sites.google.com/view/photos-privacypolicy/privacy-policy">
      Read our privacy policy <span class="arrow">→</span>
     </a>
-
    </div>
 
    <div class="stats reveal">
-
-    <div class="stat">
-     <strong>5.0</strong>
-     <span>Google Play rating</span>
-    </div>
-
-    <div class="stat">
-     <strong>50+</strong>
-     <span>Downloads</span>
-    </div>
-
-    <div class="stat highlight">
-     <strong>0</strong>
-     <span>Data collected*</span>
-    </div>
-
-    <div class="stat">
-     <strong>3+</strong>
-     <span>Content rating</span>
-    </div>
-
+    <div class="stat"><strong>5.0</strong><span>Google Play rating</span></div>
+    <div class="stat"><strong>50+</strong><span>Downloads</span></div>
+    <div class="stat highlight"><strong>0</strong><span>Data collected*</span></div>
+    <div class="stat"><strong>3+</strong><span>Content rating</span></div>
    </div>
 
   </div>
-
  </section>
 
-
- <!-- APP SCREENS -->
  <section id="apps" class="screens-section">
-
   <div class="wrap">
 
    <div class="screens-heading reveal">
-
     <div>
      <span class="eyebrow">Made to feel effortless</span>
      <h2>Every detail,<br>in its place.</h2>
     </div>
 
     <p>Explore the key screens and tools inside Photos – Liquid Glass.</p>
-
    </div>
-
 
    <div class="screen-list">
 
     <details class="screen-card reveal" open>
-
      <summary>
       <span class="screen-num">01</span>
       <span class="screen-title">Your library</span>
@@ -1291,30 +1237,21 @@ footer{
      </summary>
 
      <div class="screen-content">
-
       <img src="https://lh3.googleusercontent.com/d/1dse3C8R6baJNDsAuZuM7bszoZa4n_0PR=w900" alt="Library screen">
 
       <div>
        <h3>All your moments, at a glance.</h3>
-
-       <p>
-        Browse your photos and videos in one smooth, date-grouped library, with a floating glass tab bar and quick Select mode for bulk actions.
-       </p>
-
+       <p>Browse your photos and videos in one smooth, date-grouped library, with a floating glass tab bar and quick Select mode for bulk actions.</p>
        <ul class="chips">
         <li>Fast loading</li>
         <li>Select mode</li>
         <li>Phone and tablet support</li>
        </ul>
       </div>
-
      </div>
-
     </details>
 
-
     <details class="screen-card reveal">
-
      <summary>
       <span class="screen-num">02</span>
       <span class="screen-title">Collections</span>
@@ -1322,30 +1259,21 @@ footer{
      </summary>
 
      <div class="screen-content">
-
       <img src="https://lh3.googleusercontent.com/d/1akwM3sy1LAFChgpwroPAYMObpcC9TcEO=w900" alt="Collections screen">
 
       <div>
        <h3>Everything, neatly organised.</h3>
-
-       <p>
-        Find albums, photos, videos, screenshots, selfies, portraits, recordings, favorites, hidden items, recently deleted files, downloads and QR codes.
-       </p>
-
+       <p>Find albums, photos, videos, screenshots, selfies, portraits, recordings, favorites, hidden items, recently deleted files, downloads and QR codes.</p>
        <ul class="chips">
         <li>Media categories</li>
         <li>Hidden and favorites</li>
         <li>Quick access</li>
        </ul>
       </div>
-
      </div>
-
     </details>
 
-
     <details class="screen-card reveal">
-
      <summary>
       <span class="screen-num">03</span>
       <span class="screen-title">Albums and folders</span>
@@ -1353,30 +1281,21 @@ footer{
      </summary>
 
      <div class="screen-content">
-
       <img src="https://lh3.googleusercontent.com/d/1X4gHcp8iBKFRGVhuxf27camvH_be1HMH=w900" alt="Albums screen">
 
       <div>
        <h3>Your folders, your way.</h3>
-
-       <p>
-        Open albums with full-bleed covers, browse real device folders and manage files across internal storage and SD cards.
-       </p>
-
+       <p>Open albums with full-bleed covers, browse real device folders and manage files across internal storage and SD cards.</p>
        <ul class="chips">
         <li>Folder browsing</li>
         <li>Move and rename</li>
         <li>Copy files</li>
        </ul>
       </div>
-
      </div>
-
     </details>
 
-
     <details class="screen-card reveal">
-
      <summary>
       <span class="screen-num">04</span>
       <span class="screen-title">Photo and video preview</span>
@@ -1384,30 +1303,21 @@ footer{
      </summary>
 
      <div class="screen-content">
-
       <img src="https://lh3.googleusercontent.com/d/1stPQEiCziLSVCzlqZ0K9fI1KwCYDNu4X=w900" alt="Media preview screen">
 
       <div>
        <h3>Stay in the moment.</h3>
-
-       <p>
-        View photos and videos with quick controls to play, scrub, favorite, inspect details, edit, share or delete.
-       </p>
-
+       <p>View photos and videos with quick controls to play, scrub, favorite, inspect details, edit, share or delete.</p>
        <ul class="chips">
         <li>Playback controls</li>
         <li>Quick actions</li>
         <li>Media details</li>
        </ul>
       </div>
-
      </div>
-
     </details>
 
-
     <details class="screen-card reveal">
-
      <summary>
       <span class="screen-num">05</span>
       <span class="screen-title">Search</span>
@@ -1415,29 +1325,20 @@ footer{
      </summary>
 
      <div class="screen-content">
-
       <img src="https://lh3.googleusercontent.com/d/1EGupnrHzd6pQgTdJxdzlGPxcdNkyEix3=w900" alt="Search screen">
 
       <div>
        <h3>Find that moment faster.</h3>
-
-       <p>
-        Search your library, narrow results by date and filter by media type to get to the right memory.
-       </p>
-
+       <p>Search your library, narrow results by date and filter by media type to get to the right memory.</p>
        <ul class="chips">
         <li>Date filters</li>
         <li>Media type filters</li>
        </ul>
       </div>
-
      </div>
-
     </details>
 
-
     <details class="screen-card reveal">
-
      <summary>
       <span class="screen-num">06</span>
       <span class="screen-title">Photo editor</span>
@@ -1445,53 +1346,36 @@ footer{
      </summary>
 
      <div class="screen-content">
-
       <img src="https://lh3.googleusercontent.com/d/1gwP3Gluc-rCtUFDOtBPBpiqnVGh4rVtT=w900" alt="Photo editor screen">
 
       <div>
        <h3>Make every photo yours.</h3>
-
-       <p>
-        Crop, rotate, flip and adjust your photos. Start with Auto tools including Enhance, Dynamic and AI Enhance.
-       </p>
-
+       <p>Crop, rotate, flip and adjust your photos. Start with Auto tools including Enhance, Dynamic and AI Enhance.</p>
        <ul class="chips">
         <li>Crop and rotate</li>
         <li>Adjustments</li>
         <li>AI Enhance</li>
        </ul>
       </div>
-
      </div>
-
     </details>
 
    </div>
-
   </div>
-
  </section>
 
-
- <!-- PRIVACY -->
  <section id="privacy">
-
   <div class="wrap privacy-grid">
 
    <div class="privacy-art reveal">
-
     <img src="https://lh3.googleusercontent.com/d/1tciigXTisfNr1ejOxBIO1uZ1IAYyAeOy=w512" alt="Photos – Liquid Glass app icon">
-
    </div>
 
    <div class="reveal">
-
     <span class="eyebrow">Your privacy comes first</span>
-
     <h2>Beautifully simple.<br>Private by design.</h2>
 
     <div class="privacy-points">
-
      <div class="privacy-point">
       <b>No cloud. No account.</b>
       <span>Your gallery is designed to keep your media on your device.</span>
@@ -1511,64 +1395,43 @@ footer{
       <b>No tracking</b>
       <span>Google Play’s Data safety information lists no data collected or shared.</span>
      </div>
-
     </div>
-
    </div>
 
   </div>
-
  </section>
 
-
- <!-- REVIEWS -->
  <section style="padding-top:0">
-
   <div class="wrap review reveal">
 
    <span class="eyebrow">What people are saying</span>
 
-   <blockquote id="quote">
-    “This is a beautiful and fantastic photo gallery.”
-   </blockquote>
+   <blockquote id="quote">“This is a beautiful and fantastic photo gallery.”</blockquote>
 
    <div class="review-bottom">
-
     <span id="review-author">Tulpa Omega · Google Play review</span>
 
     <div class="review-controls">
-
      <span id="review-count">01 / 02</span>
-
      <button id="prev" aria-label="Previous review">←</button>
      <button id="next" aria-label="Next review">→</button>
-
     </div>
-
    </div>
 
   </div>
-
  </section>
 
-
- <!-- CONTACT / CTA -->
  <section id="contact" style="padding-top:0">
-
   <div class="wrap">
 
    <div class="cta-panel reveal">
-
     <span class="eyebrow">Build on what’s already here</span>
 
     <h2>The app base is available for licensing.</h2>
 
-    <p>
-     Start with a finished Android gallery experience, including its glass interface and media-management foundation, instead of building everything from scratch. Pricing and licence terms are available on request.
-    </p>
+    <p>Start with a finished Android gallery experience, including its glass interface and media-management foundation, instead of building everything from scratch. Pricing and licence terms are available on request.</p>
 
     <div class="cta-actions">
-
      <a class="btn primary" href="mailto:snsl.developer@gmail.com?subject=App%20base%20enquiry%3A%20Photos%20%E2%80%93%20Liquid%20Glass">
       Talk to the developer <span class="arrow">→</span>
      </a>
@@ -1576,41 +1439,27 @@ footer{
      <a class="btn secondary" href="https://play.google.com/store/apps/details?id=com.snsl.liquidphoto">
       Try the app
      </a>
-
     </div>
-
    </div>
 
   </div>
-
  </section>
 
 </main>
 
-
-<!-- FULL-WIDTH FOOTER -->
 <footer>
-
  <div class="wrap">
 
   <div class="footer-top">
 
    <div class="footer-brand">
-
     <a class="brand" href="#top">
-
      <img src="https://lh3.googleusercontent.com/d/1Lzqc0QWvgZHokJ0SQZ5bKi2rbNOgl9vT=w256" alt="">
-
      SNSL
-
     </a>
 
-    <p>
-     Modern Apps. Thoughtful Design. — Minimal and stylish.
-    </p>
-
+    <p>Modern Apps. Thoughtful Design. — Minimal and stylish.</p>
    </div>
-
 
    <div class="footer-cols">
 
@@ -1635,77 +1484,55 @@ footer{
     </div>
 
    </div>
-
   </div>
 
-
   <div class="footer-bottom">
-
    <span>© 2026 SNSL. Google Play is a trademark of Google LLC.</span>
 
    <span>
     <a href="https://sites.google.com/view/photos-privacypolicy/privacy-policy">Privacy policy</a>
     <a href="https://play.google.com/store/apps/dev?id=8249788015098241124">Google Play developer page</a>
    </span>
-
   </div>
 
  </div>
-
 </footer>
-
 
 <script>
 (() => {
 
   // Reveal sections as they enter the viewport.
-
   const revealItems = document.querySelectorAll('.reveal');
 
   if ('IntersectionObserver' in window) {
-
     const observer = new IntersectionObserver((entries, obs) => {
-
       entries.forEach(entry => {
-
         if (entry.isIntersecting) {
-
           entry.target.classList.add('visible');
-
           obs.unobserve(entry.target);
-
         }
-
       });
-
     }, {
       threshold: 0.12,
       rootMargin: '0px 0px -35px 0px'
     });
 
     revealItems.forEach(item => observer.observe(item));
-
   } else {
-
     revealItems.forEach(item => item.classList.add('visible'));
-
   }
 
 
   // Review carousel.
-
   const reviews = [
-
     [
       '“This is a beautiful and fantastic photo gallery.”',
       'Tulpa Omega · Google Play review'
     ],
-
     [
       '“Just downloaded the App yesterday and so far loving it.”',
       'Michelle Gray · Google Play review'
     ]
-
   ];
 
   let current = 0;
@@ -1714,9 +1541,7 @@ footer{
   const author = document.getElementById('review-author');
   const count = document.getElementById('review-count');
 
-
   function showReview(index) {
-
     current = (index + reviews.length) % reviews.length;
 
     quote.animate(
@@ -1731,9 +1556,7 @@ footer{
     ).onfinish = () => {
 
       quote.textContent = reviews[current][0];
-
       author.textContent = reviews[current][1];
-
       count.textContent = `0${current+1} / 0${reviews.length}`;
 
       quote.animate(
@@ -1746,43 +1569,27 @@ footer{
           fill:'forwards'
         }
       );
-
     };
-
   }
 
+  document.getElementById('prev').addEventListener('click', () => {
+    showReview(current - 1);
+  });
 
-  document.getElementById('prev').addEventListener(
-    'click',
-    () => showReview(current - 1)
-  );
-
-  document.getElementById('next').addEventListener(
-    'click',
-    () => showReview(current + 1)
-  );
+  document.getElementById('next').addEventListener('click', () => {
+    showReview(current + 1);
+  });
 
 
   // Keep only one feature panel open at a time.
-
   document.querySelectorAll('.screen-card').forEach(card => {
-
     card.addEventListener('toggle', () => {
-
       if (card.open) {
-
         document.querySelectorAll('.screen-card').forEach(other => {
-
-          if (other !== card) {
-            other.open = false;
-          }
-
+          if (other !== card) other.open = false;
         });
-
       }
-
     });
-
   });
 
 })();
